@@ -7,10 +7,99 @@
 <li><b>Backtest Period Selector</b><br>• Includes 8 predefined market regimes (e.g., COVID Crash, AI Boom)<br>• Enables targeted performance analysis across macro environments</li></ul>
 <hr>
 <b>Configurable Inputs </b><br>
-<pre><code>// === Strategy Parameters ===input int    emaVeryFastPeriod = 20;     // Shortest EMAinput int    emaFastPeriod     = 25;     // Medium EMAinput int    emaSlowPeriod     = 50;     // Longest EMAinput int    adxPeriod         = 50;     // ADX smoothing periodinput double adxThreshold     = 40.0;    // Minimum ADX to confirm trendinput int    crossoverLookback = 20;     // EMA crossover lookback (optional)input bool   barsLookbackBool  = true;   // Use fixed bar count or full historyinput int    barsLookBack      = 1000;   // Number of bars to evaluateinput double lotSize           = 0.01;   // Trade volumeinput double pRange            = 6;      // Take-profit distanceinput double lRange            = 3;      // Stop-loss distance// === Timeframe Selection ===ENUM_TIMEFRAMES timeframes[] = { PERIOD_H1, PERIOD_M15, PERIOD_M30 };// === Backtest Period Selector ===input int periodSelector = 7;  // Select from 0 to 7 (see predefined periods)</code></pre>
+<h2>⚙️ Strategy Parameters</h2>
+
+<p>This section outlines all configurable inputs used in the EMA-ADX Multi-Timeframe Trading Strategy.</p>
+
+<h3>📈 Trend Detection</h3>
+<ul>
+  <li><b>Very Fast EMA Period:</b> <code>20</code> — shortest moving average</li>
+  <li><b>Fast EMA Period:</b> <code>25</code> — medium-term moving average</li>
+  <li><b>Slow EMA Period:</b> <code>50</code> — long-term moving average</li>
+  <li><b>ADX Period:</b> <code>50</code> — smoothing period for trend strength</li>
+  <li><b>ADX Threshold:</b> <code>40.0</code> — minimum value to confirm a strong trend</li>
+  <li><b>Crossover Lookback:</b> <code>20</code> — optional filter to avoid recent EMA reversals</li>
+</ul>
+
+<h3>📊 Data Evaluation</h3>
+<ul>
+  <li><b>Use Fixed Bar Count:</b> <code>true</code> — toggle between fixed or full history</li>
+  <li><b>Bars to Evaluate:</b> <code>1000</code> — number of bars used in trend analysis</li>
+</ul>
+
+<h3>💰 Trade Execution</h3>
+<ul>
+  <li><b>Lot Size:</b> <code>0.01</code> — volume per trade</li>
+  <li><b>Take-Profit Range:</b> <code>6</code> — distance in points</li>
+  <li><b>Stop-Loss Range:</b> <code>3</code> — distance in points</li>
+</ul>
+
+<h3>⏱️ Timeframe Confirmation</h3>
+<ul>
+  <li><b>Timeframes Used:</b> <code>H1</code>, <code>M15</code>, <code>M30</code> — all must agree for trade entry</li>
+</ul>
+
+<h3>📅 Backtest Period Selector</h3>
+<ul>
+  <li><b>Selector Index:</b> <code>7</code> — maps to a predefined market regime (e.g. "2025 YTD")</li>
+</ul>
 <hr>
 <b>Backtest Periods</b><br>
-<pre><code>BacktestPeriod backtestPeriods[] ={{"COVID Crash & Recovery",         D'2020.02.15 00:00' → D'2020.06.30 23:59'},{"Post-COVID Stimulus Rally",     D'2020.07.01 00:00' → D'2021.03.31 23:59'},{"Inflation Fears Begin",         D'2021.04.01 00:00' → D'2021.12.31 23:59'},{"Rate Hike Cycle Starts",        D'2022.01.01 00:00' → D'2022.09.30 23:59'},{"Bear Market & Repricing",       D'2022.10.01 00:00' → D'2023.06.30 23:59'},{"Sideways & Recovery",           D'2023.07.01 00:00' → D'2024.03.31 23:59'},{"AI Boom & Rotation",            D'2024.04.01 00:00' → D'2024.12.31 23:59'},{"2025 YTD",                      D'2025.01.01 00:00' → D'2025.10.24 23:59'}};</code></pre>
+<h2>📅 Backtest Periods</h2>
+
+<p>The strategy includes eight predefined market regimes for targeted performance analysis. Each period reflects a distinct macro environment.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>COVID Crash & Recovery</b></td>
+      <td><code>2020.02.15 00:00</code></td>
+      <td><code>2020.06.30 23:59</code></td>
+    </tr>
+    <tr>
+      <td><b>Post-COVID Stimulus Rally</b></td>
+      <td><code>2020.07.01 00:00</code></td>
+      <td><code>2021.03.31 23:59</code></td>
+    </tr>
+    <tr>
+      <td><b>Inflation Fears Begin</b></td>
+      <td><code>2021.04.01 00:00</code></td>
+      <td><code>2021.12.31 23:59</code></td>
+    </tr>
+    <tr>
+      <td><b>Rate Hike Cycle Starts</b></td>
+      <td><code>2022.01.01 00:00</code></td>
+      <td><code>2022.09.30 23:59</code></td>
+    </tr>
+    <tr>
+      <td><b>Bear Market & Repricing</b></td>
+      <td><code>2022.10.01 00:00</code></td>
+      <td><code>2023.06.30 23:59</code></td>
+    </tr>
+    <tr>
+      <td><b>Sideways & Recovery</b></td>
+      <td><code>2023.07.01 00:00</code></td>
+      <td><code>2024.03.31 23:59</code></td>
+    </tr>
+    <tr>
+      <td><b>AI Boom & Rotation</b></td>
+      <td><code>2024.04.01 00:00</code></td>
+      <td><code>2024.12.31 23:59</code></td>
+    </tr>
+    <tr>
+      <td><b>2025 YTD</b></td>
+      <td><code>2025.01.01 00:00</code></td>
+      <td><code>2025.10.24 23:59</code></td>
+    </tr>
+  </tbody>
+</table>
 <hr>
 <b>File Structure</b><br>
 <ul><li><code>OnInit()</code> — Initializes backtest period</li><li><code>IsTrending()</code> — Evaluates EMA and ADX conditions per timeframe</li><li><code>OnTick()</code> — Executes trade logic if all timeframes confirm trend</li><li><code>OnTester()</code> — Returns final balance for backtest evaluation</li></ul>
