@@ -39,10 +39,10 @@ void OnTickLogic( datetime testStart, datetime testEnd,bool CrossoverFilter  ) {
 
    if (PositionsTotal() == 0) {
       if (bullishTrend) {
-         ExecuteTrade(true);
+         ExecuteTrade(false);
          Print("Bullish trend confirmed across all timeframes. Consider Buy.");
       } else if (bearishTrend) {
-         ExecuteTrade(false);
+         ExecuteTrade(true);
          Print("Bearish trend confirmed across all timeframes. Consider Sell.");
       }
    }
