@@ -1,4 +1,4 @@
-
+ 
 // trade_logic.mqh
 void ExecuteTrade(bool isBuy) {
    MqlTradeRequest request = {};
