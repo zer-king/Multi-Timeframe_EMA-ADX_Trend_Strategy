@@ -1,3 +1,4 @@
+
 // trade_logic.mqh
 void ExecuteTrade(bool isBuy) {
    MqlTradeRequest request = {};
@@ -20,7 +21,7 @@ void ExecuteTrade(bool isBuy) {
    PrintFormat("retcode=%u  deal=%I64u  order=%I64u", result.retcode, result.deal, result.order);
 }
 
-void OnTickLogic(datetime testStart, datetime testEnd) {
+void OnTickLogic( datetime testStart, datetime testEnd,bool CrossoverFilter  ) {
    if (TimeCurrent() < testStart || TimeCurrent() > testEnd)
       return;
 
@@ -29,7 +30,7 @@ void OnTickLogic(datetime testStart, datetime testEnd) {
 
    for (int i = 0; i < ArraySize(timeframes); i++) {
       bool isBullish;
-      if (!IsTrending(_Symbol, timeframes[i], isBullish))
+      if (!IsTrending(_Symbol, timeframes[i], isBullish,CrossoverFilter))
          return;
 
       bullishTrend &= isBullish;
