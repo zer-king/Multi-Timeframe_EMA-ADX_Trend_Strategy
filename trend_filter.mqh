@@ -1,5 +1,6 @@
 // trend_filter.mqh
-bool IsTrending(string symbol, ENUM_TIMEFRAMES tf, bool &isBullish) {
+
+bool IsTrending(string symbol, ENUM_TIMEFRAMES tf, bool &isBullish,bool CrossoverFilter) {
    double adx[], emaVeryFast[], emaFast[], emaSlow[];
    int bars = barsLookbackBool ? barsLookBack : iBars(symbol, tf);
 
@@ -20,20 +21,26 @@ bool IsTrending(string symbol, ENUM_TIMEFRAMES tf, bool &isBullish) {
 
    if (adx[0] < adxThreshold)
       return false;
-
-   if (enableCrossoverFilter && CrossoverDetected(emaFast, emaSlow, crossoverLookback))
-   return false;
-
+   
+   if (CrossoverFilter && CrossoverDetected(emaFast, emaSlow, crossoverLookback))
+      return false;
+   
    isBullish = emaFast[0] > emaSlow[0] && emaVeryFast[0] > emaFast[0];
-   return true;
+      return true;
 }
 bool CrossoverDetected(const double &emaFast[], const double &emaSlow[], int lookback) {
    for (int i = 1; i <= lookback; i++) {
       double prevFast = emaFast[i];
       double prevSlow = emaSlow[i];
       if ((prevFast > prevSlow && emaFast[0] < emaSlow[0]) ||
-          (prevFast < prevSlow && emaFast[0] > emaSlow[0]))
-         return true;
+          (prevFast < prevSlow && emaFast[0] > emaSlow[0])){
+            Print("Crossover check running");
+            return true;          
+          
+          
+      }
+         
+
    }
    return false;
 }
