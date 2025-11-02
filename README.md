@@ -1,10 +1,31 @@
-<b>Multi-Timeframe EMA-ADX Trend Strategy (MQL5)</b><br><br> This MQL5 Expert Advisor identifies high-conviction trend setups using a combination of exponential moving averages (EMAs) and the Average Directional Index (ADX) across multiple timeframes. It executes trades only when trend conditions are confirmed across all selected timeframes, helping filter out noise and avoid false signals.
+<h2>📊 <b>Multi-Timeframe EMA-ADX Trend Strategy (MQL5)</b></h2>
+
+<p>This MQL5 Expert Advisor identifies high-conviction trend setups using a combination of exponential moving averages (EMAs) and the Average Directional Index (ADX) across multiple timeframes. It executes trades only when trend conditions are confirmed across all selected timeframes, helping filter out noise and avoid false signals.</p>
+
 <hr>
-<b>Strategy Overview</b><br>
-<ul><li><b>Trend Filter</b><br>• Uses three EMAs (20, 25, 50) to detect directional bias<br>• ADX (50-period) must exceed a threshold (default: 40.0) to confirm trend strength<br>• Optional crossover filter (disabled by default) can detect recent EMA reversals</li>
-<li><b>Multi-Timeframe Confirmation</b><br>• Applies trend logic across M15, M30, and H1<br>• Trades only if all timeframes agree on bullish or bearish direction</li>
-<li><b>Trade Execution</b><br>• Market orders with fixed lot size (default: 0.01)<br>• Static take-profit and stop-loss levels (<code>pRange</code>, <code>lRange</code>)<br>• No overlapping trades — checks <code>PositionsTotal()</code> before entry</li>
-<li><b>Backtest Period Selector</b><br>• Includes 8 predefined market regimes (e.g., COVID Crash, AI Boom)<br>• Enables targeted performance analysis across macro environments</li></ul>
+
+<h3>🧠 <b>Strategy Overview</b></h3>
+<ul>
+  <li>📈 <b>Trend Filter</b><br>
+    • Uses three EMAs (<code>20</code>, <code>25</code>, <code>50</code>) to detect directional bias<br>
+    • ADX (<code>50</code>-period) must exceed a threshold (default: <code>40.0</code>) to confirm trend strength<br>
+    • Optional crossover filter (disabled by default) can detect recent EMA reversals
+  </li>
+  <li>⏱️ <b>Multi-Timeframe Confirmation</b><br>
+    • Applies trend logic across <code>M15</code>, <code>M30</code>, and <code>H1</code><br>
+    • Trades only if all timeframes agree on bullish or bearish direction
+  </li>
+  <li>💰 <b>Trade Execution</b><br>
+    • Market orders with fixed lot size (default: <code>0.01</code>)<br>
+    • Static take-profit and stop-loss levels (<code>pRange</code>, <code>lRange</code>)<br>
+    • No overlapping trades — checks <code>PositionsTotal()</code> before entry
+  </li>
+  <li>📅 <b>Backtest Period Selector</b><br>
+    • Includes 8 predefined market regimes (e.g., COVID Crash, AI Boom)<br>
+    • Enables targeted performance analysis across macro environments
+  </li>
+</ul>
+
 <hr>
 <b>Configurable Inputs </b><br>
 <h2>⚙️ Strategy Parameters</h2>
