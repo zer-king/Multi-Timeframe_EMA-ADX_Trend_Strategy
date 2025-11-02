@@ -1,4 +1,5 @@
 // backtest_periods.mqh
+
 struct BacktestPeriod {
    datetime start;
    datetime end;
@@ -16,7 +17,9 @@ BacktestPeriod backtestPeriods[] = {
    {D'2025.01.01 00:00', D'2025.10.24 23:59', "2025 YTD"}
 };
 
-void SetBacktestPeriod(datetime &testStart, datetime &testEnd, int selector) {
+void SetBacktestPeriod(  datetime &testStart, datetime &testEnd, int selector) {
    testStart = backtestPeriods[selector].start;
    testEnd   = backtestPeriods[selector].end;
 }
+
+
