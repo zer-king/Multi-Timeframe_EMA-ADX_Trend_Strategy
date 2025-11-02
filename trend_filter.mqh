@@ -24,3 +24,13 @@ bool IsTrending(string symbol, ENUM_TIMEFRAMES tf, bool &isBullish) {
    isBullish = emaFast[0] > emaSlow[0] && emaVeryFast[0] > emaFast[0];
    return true;
 }
+bool CrossoverDetected(const double &emaFast[], const double &emaSlow[], int lookback) {
+   for (int i = 1; i <= lookback; i++) {
+      double prevFast = emaFast[i];
+      double prevSlow = emaSlow[i];
+      if ((prevFast > prevSlow && emaFast[0] < emaSlow[0]) ||
+          (prevFast < prevSlow && emaFast[0] > emaSlow[0]))
+         return true;
+   }
+   return false;
+}
