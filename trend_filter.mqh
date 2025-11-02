@@ -21,6 +21,9 @@ bool IsTrending(string symbol, ENUM_TIMEFRAMES tf, bool &isBullish) {
    if (adx[0] < adxThreshold)
       return false;
 
+   if (enableCrossoverFilter && CrossoverDetected(emaFast, emaSlow, crossoverLookback))
+   return false;
+
    isBullish = emaFast[0] > emaSlow[0] && emaVeryFast[0] > emaFast[0];
    return true;
 }
