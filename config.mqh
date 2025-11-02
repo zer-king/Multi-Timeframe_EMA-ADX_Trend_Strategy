@@ -1,4 +1,5 @@
 /*
+// commented out to allow for backtesting within MQL5 as inputs need to be on the EA file to adjust parameter for backtesting
 // config.mqh
 input int emaVeryFastPeriod = 20;
 input int emaFastPeriod     = 25;
