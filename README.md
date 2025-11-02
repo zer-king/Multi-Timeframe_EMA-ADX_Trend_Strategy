@@ -39,7 +39,8 @@
   <li><b>Slow EMA Period:</b> <code>50</code> — long-term moving average</li>
   <li><b>ADX Period:</b> <code>50</code> — smoothing period for trend strength</li>
   <li><b>ADX Threshold:</b> <code>40.0</code> — minimum value to confirm a strong trend</li>
-  <li><b>Crossover Lookback:</b> <code>20</code> — optional filter to avoid recent EMA reversals</li>
+  <li><b> Optional EMA Crossover Filter :</b> <code>true</code> — optional filter to avoid recent EMA reversals</li>
+  <li><b>Crossover Lookback:</b> <code>20</code> — how far to look back in optional EMA Crossover filter </li>
 </ul>
 
 <h3>📊 Data Evaluation</h3>
