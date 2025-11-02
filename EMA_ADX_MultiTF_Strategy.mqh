@@ -2,7 +2,7 @@ input int emaVeryFastPeriod = 20;
 input int emaFastPeriod     = 25;
 input int emaSlowPeriod     = 50;
 input int adxPeriod         = 50;
-input double adxThreshold   = 40.0;
+input double adxThreshold   = 32.0;
 input bool enableCrossoverFilter = false;  // Optional EMA crossover filter
 input int crossoverLookback = 20;
 input bool barsLookbackBool = true;
@@ -13,7 +13,7 @@ input double lRange         = 2;
 
 ENUM_TIMEFRAMES timeframes[] = { PERIOD_H1, PERIOD_M15, PERIOD_M30 };
 
-input int periodSelector = 7;  // Select from 0 to 7
+input int periodSelector = 5;  // Select from 0 to 7
 
 #include "config.mqh"
 #include "backtest_periods.mqh"
