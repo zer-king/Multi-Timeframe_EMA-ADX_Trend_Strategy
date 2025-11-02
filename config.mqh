@@ -10,6 +10,7 @@ input int barsLookBack      = 1000;
 input double lotSize        = 0.01;
 input double pRange         = 6;
 input double lRange         = 3;
+input bool enableCrossoverFilter = false;  // Optional EMA crossover filter
 
 ENUM_TIMEFRAMES timeframes[] = { PERIOD_H1, PERIOD_M15, PERIOD_M30 };
 
