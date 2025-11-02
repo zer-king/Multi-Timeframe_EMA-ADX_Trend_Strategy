@@ -45,14 +45,14 @@
 <h3>📊 Data Evaluation</h3>
 <ul>
   <li><b>Use Fixed Bar Count:</b> <code>true</code> — toggle between fixed or full history</li>
-  <li><b>Bars to Evaluate:</b> <code>1000</code> — number of bars used in trend analysis</li>
+  <li><b>Bars to Evaluate:</b> <code>500</code> — number of bars used in trend analysis</li>
 </ul>
 
 <h3>💰 Trade Execution</h3>
 <ul>
   <li><b>Lot Size:</b> <code>0.01</code> — volume per trade</li>
-  <li><b>Take-Profit Range:</b> <code>6</code> — distance in points</li>
-  <li><b>Stop-Loss Range:</b> <code>3</code> — distance in points</li>
+  <li><b>Take-Profit Range:</b> <code>4</code> — distance in points</li>
+  <li><b>Stop-Loss Range:</b> <code>2</code> — distance in points</li>
 </ul>
 
 <h3>⏱️ Timeframe Confirmation</h3>
