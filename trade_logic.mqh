@@ -1,4 +1,4 @@
- 
+ll 
 // trade_logic.mqh
 void ExecuteTrade(bool isBuy) {
    MqlTradeRequest request = {};
@@ -40,10 +40,10 @@ void OnTickLogic( datetime testStart, datetime testEnd,bool CrossoverFilter  ) {
    if (PositionsTotal() == 0) {
       if (bullishTrend) {
          ExecuteTrade(false);
-         Print("Bullish trend confirmed across all timeframes. Consider Buy.");
+         Print("Bullish trend confirmed across all timeframes. Consider Sell.");
       } else if (bearishTrend) {
          ExecuteTrade(true);
-         Print("Bearish trend confirmed across all timeframes. Consider Sell.");
+         Print("Bearish trend confirmed across all timeframes. Consider Buy.");
       }
    }
 }
